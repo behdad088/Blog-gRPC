@@ -4,10 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{E1C99FC0-5F9B-4B80-8D36-C81FAC3D1420}"
+	ProjectSection(SolutionItems) = preProject
+		blog.proto = blog.proto
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{689854CC-D6B4-4F40-AB7A-A223DEBED302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{689854CC-D6B4-4F40-AB7A-A223DEBED302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{EA2BE41D-5F8B-4745-99D3-C29A3D93B244}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{EA2BE41D-5F8B-4745-99D3-C29A3D93B244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
