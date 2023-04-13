@@ -18,4 +18,8 @@
     <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Protobuf Include="../*.proto" OutputDir="%(RelativePath)Models/" />
+	</ItemGroup>
+
 </Project>
