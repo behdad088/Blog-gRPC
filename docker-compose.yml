@@ -1,0 +1,16 @@
+#27017:27017 external port on the left inernal port on the right
+# docker run --rm -d --name mongoDb -p 27017:27017 -v mongodbdata:/Data/db mongo
+
+version: "3.8"
+
+services: 
+  mongo:
+    image: mongo
+    container_name: mongoDb
+    ports: 
+      - 27017:27017
+    volumes: 
+      - mongodbdata:/Data/db
+
+volumes: 
+  mongodbdata:
