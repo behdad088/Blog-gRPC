@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Blog {
-  public static partial class blogService
+  public static partial class BlogService
   {
-    static readonly string __ServiceName = "blog.blogService";
+    static readonly string __ServiceName = "blog.BlogService";
 
 
     /// <summary>Service descriptor</summary>
@@ -19,51 +19,51 @@ namespace Blog {
       get { return global::Blog.BlogReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of blogService</summary>
-    [grpc::BindServiceMethod(typeof(blogService), "BindService")]
-    public abstract partial class blogServiceBase
+    /// <summary>Base class for server-side implementations of BlogService</summary>
+    [grpc::BindServiceMethod(typeof(BlogService), "BindService")]
+    public abstract partial class BlogServiceBase
     {
     }
 
-    /// <summary>Client for blogService</summary>
-    public partial class blogServiceClient : grpc::ClientBase<blogServiceClient>
+    /// <summary>Client for BlogService</summary>
+    public partial class BlogServiceClient : grpc::ClientBase<BlogServiceClient>
     {
-      /// <summary>Creates a new client for blogService</summary>
+      /// <summary>Creates a new client for BlogService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public blogServiceClient(grpc::ChannelBase channel) : base(channel)
+      public BlogServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for blogService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for BlogService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public blogServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public BlogServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected blogServiceClient() : base()
+      protected BlogServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected blogServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected BlogServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override blogServiceClient NewInstance(ClientBaseConfiguration configuration)
+      protected override BlogServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new blogServiceClient(configuration);
+        return new BlogServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(blogServiceBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(BlogServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder().Build();
     }
@@ -73,7 +73,7 @@ namespace Blog {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, blogServiceBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, BlogServiceBase serviceImpl)
     {
     }
 

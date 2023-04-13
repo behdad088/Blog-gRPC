@@ -26,7 +26,7 @@ namespace Blog {
           string.Concat(
             "CgpibG9nLnByb3RvEgRibG9nIkUKBGJsb2cSCgoCaWQYASABKAkSEQoJYXV0",
             "aG9yX2lkGAIgASgJEg0KBXRpdGxlGAMgASgJEg8KB2NvbnRlbnQYBCABKAky",
-            "DQoLYmxvZ1NlcnZpY2ViBnByb3RvMw=="));
+            "DQoLQmxvZ1NlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

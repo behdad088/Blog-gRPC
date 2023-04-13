@@ -9,6 +9,6 @@ message blog {
 	string content = 4;
 }
 
-service blogService {
+service BlogService {
 
 }
