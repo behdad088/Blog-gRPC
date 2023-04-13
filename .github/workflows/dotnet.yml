@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: server
-        path: home/runner/work/Blog-gRPC/Blog-gRPC/server
+        path: Blog-gRPC/Blog-gRPC/server
         if-no-files-found: error
