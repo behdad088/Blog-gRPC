@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: server
-        path: bin\Release\Publish
+        path: Server\bin\Release\Publish
         if-no-files-found: error
