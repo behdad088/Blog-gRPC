@@ -20,6 +20,22 @@ namespace Client
 
             var client = new BlogService.BlogServiceClient(channel);
 
+            try
+            {
+                //await CreateBlogAsync(client);
+                await ReadBlogAsync(client);
+            }
+            catch (RpcException e)
+            {
+                Console.WriteLine(e.Status.Detail);
+            }
+
+            channel.ShutdownAsync().Wait();
+            Console.ReadKey();
+        }
+
+        private static async Task CreateBlogAsync(BlogService.BlogServiceClient client)
+        {
             var createBlog = new CreateBlogRequest
             {
                 Blog = new Blog.Blog
@@ -32,10 +48,19 @@ namespace Client
 
             var response = await client.CreateBlogAsync(createBlog);
 
-            Console.WriteLine($"Blow with Id: {response.Blog.Id} was created!");
+            Console.WriteLine($"Blog with Id: {response.Blog.Id} was created!");
 
-            channel.ShutdownAsync().Wait();
-            Console.ReadKey();
+        }
+
+        private static async Task ReadBlogAsync(BlogService.BlogServiceClient client)
+        {
+            var readBlog = new ReadBlogRequest
+            {
+                BlogId = "6438e4eb5274266f6e292e6f"
+            };
+
+            var response = await client.ReadBlogAsync(readBlog);
+            Console.WriteLine(response.Blog.ToString());
         }
     }
 }

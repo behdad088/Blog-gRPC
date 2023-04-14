@@ -27,16 +27,21 @@ namespace Blog {
             "CgpibG9nLnByb3RvEgRibG9nIkUKBEJsb2cSCgoCaWQYASABKAkSEQoJYXV0",
             "aG9yX2lkGAIgASgJEg0KBXRpdGxlGAMgASgJEg8KB2NvbnRlbnQYBCABKAki",
             "LQoRQ3JlYXRlQmxvZ1JlcXVlc3QSGAoEYmxvZxgBIAEoCzIKLmJsb2cuQmxv",
-            "ZyIvChNDcmVhZXRlQmxvZ1Jlc3BvbnNlEhgKBGJsb2cYASABKAsyCi5ibG9n",
-            "LkJsb2cyUQoLQmxvZ1NlcnZpY2USQgoKQ3JlYXRlQmxvZxIXLmJsb2cuQ3Jl",
-            "YXRlQmxvZ1JlcXVlc3QaGS5ibG9nLkNyZWFldGVCbG9nUmVzcG9uc2UiAGIG",
-            "cHJvdG8z"));
+            "ZyIuChJDcmVhdGVCbG9nUmVzcG9uc2USGAoEYmxvZxgBIAEoCzIKLmJsb2cu",
+            "QmxvZyIiCg9SZWFkQmxvZ1JlcXVlc3QSDwoHYmxvZ19pZBgBIAEoCSIsChBS",
+            "ZWFkQmxvZ1Jlc3BvbnNlEhgKBGJsb2cYASABKAsyCi5ibG9nLkJsb2cyjQEK",
+            "C0Jsb2dTZXJ2aWNlEkEKCkNyZWF0ZUJsb2cSFy5ibG9nLkNyZWF0ZUJsb2dS",
+            "ZXF1ZXN0GhguYmxvZy5DcmVhdGVCbG9nUmVzcG9uc2UiABI7CghSZWFkQmxv",
+            "ZxIVLmJsb2cuUmVhZEJsb2dSZXF1ZXN0GhYuYmxvZy5SZWFkQmxvZ1Jlc3Bv",
+            "bnNlIgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Blog.Blog), global::Blog.Blog.Parser, new[]{ "Id", "AuthorId", "Title", "Content" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Blog.CreateBlogRequest), global::Blog.CreateBlogRequest.Parser, new[]{ "Blog" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Blog.CreaeteBlogResponse), global::Blog.CreaeteBlogResponse.Parser, new[]{ "Blog" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Blog.CreateBlogResponse), global::Blog.CreateBlogResponse.Parser, new[]{ "Blog" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Blog.ReadBlogRequest), global::Blog.ReadBlogRequest.Parser, new[]{ "BlogId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Blog.ReadBlogResponse), global::Blog.ReadBlogResponse.Parser, new[]{ "Blog" }, null, null, null, null)
           }));
     }
     #endregion
@@ -541,16 +546,16 @@ namespace Blog {
 
   }
 
-  public sealed partial class CreaeteBlogResponse : pb::IMessage<CreaeteBlogResponse>
+  public sealed partial class CreateBlogResponse : pb::IMessage<CreateBlogResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CreaeteBlogResponse> _parser = new pb::MessageParser<CreaeteBlogResponse>(() => new CreaeteBlogResponse());
+    private static readonly pb::MessageParser<CreateBlogResponse> _parser = new pb::MessageParser<CreateBlogResponse>(() => new CreateBlogResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CreaeteBlogResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateBlogResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -566,7 +571,7 @@ namespace Blog {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreaeteBlogResponse() {
+    public CreateBlogResponse() {
       OnConstruction();
     }
 
@@ -574,15 +579,15 @@ namespace Blog {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreaeteBlogResponse(CreaeteBlogResponse other) : this() {
+    public CreateBlogResponse(CreateBlogResponse other) : this() {
       blog_ = other.blog_ != null ? other.blog_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreaeteBlogResponse Clone() {
-      return new CreaeteBlogResponse(this);
+    public CreateBlogResponse Clone() {
+      return new CreateBlogResponse(this);
     }
 
     /// <summary>Field number for the "blog" field.</summary>
@@ -600,12 +605,12 @@ namespace Blog {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CreaeteBlogResponse);
+      return Equals(other as CreateBlogResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CreaeteBlogResponse other) {
+    public bool Equals(CreateBlogResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -678,7 +683,394 @@ namespace Blog {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CreaeteBlogResponse other) {
+    public void MergeFrom(CreateBlogResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.blog_ != null) {
+        if (blog_ == null) {
+          Blog = new global::Blog.Blog();
+        }
+        Blog.MergeFrom(other.Blog);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (blog_ == null) {
+              Blog = new global::Blog.Blog();
+            }
+            input.ReadMessage(Blog);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (blog_ == null) {
+              Blog = new global::Blog.Blog();
+            }
+            input.ReadMessage(Blog);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ReadBlogRequest : pb::IMessage<ReadBlogRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReadBlogRequest> _parser = new pb::MessageParser<ReadBlogRequest>(() => new ReadBlogRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ReadBlogRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Blog.BlogReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogRequest(ReadBlogRequest other) : this() {
+      blogId_ = other.blogId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogRequest Clone() {
+      return new ReadBlogRequest(this);
+    }
+
+    /// <summary>Field number for the "blog_id" field.</summary>
+    public const int BlogIdFieldNumber = 1;
+    private string blogId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BlogId {
+      get { return blogId_; }
+      set {
+        blogId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ReadBlogRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ReadBlogRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BlogId != other.BlogId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BlogId.Length != 0) hash ^= BlogId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BlogId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BlogId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BlogId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BlogId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BlogId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BlogId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ReadBlogRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BlogId.Length != 0) {
+        BlogId = other.BlogId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            BlogId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            BlogId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ReadBlogResponse : pb::IMessage<ReadBlogResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReadBlogResponse> _parser = new pb::MessageParser<ReadBlogResponse>(() => new ReadBlogResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ReadBlogResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Blog.BlogReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogResponse(ReadBlogResponse other) : this() {
+      blog_ = other.blog_ != null ? other.blog_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReadBlogResponse Clone() {
+      return new ReadBlogResponse(this);
+    }
+
+    /// <summary>Field number for the "blog" field.</summary>
+    public const int BlogFieldNumber = 1;
+    private global::Blog.Blog blog_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Blog.Blog Blog {
+      get { return blog_; }
+      set {
+        blog_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ReadBlogResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ReadBlogResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Blog, other.Blog)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (blog_ != null) hash ^= Blog.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (blog_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Blog);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (blog_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Blog);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (blog_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Blog);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ReadBlogResponse other) {
       if (other == null) {
         return;
       }
