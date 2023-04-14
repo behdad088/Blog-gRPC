@@ -23,7 +23,8 @@ namespace Client
             try
             {
                 //await CreateBlogAsync(client);
-                await ReadBlogAsync(client);
+                //await ReadBlogAsync(client);
+                await UpdateBlogAsync(client);
             }
             catch (RpcException e)
             {
@@ -60,6 +61,23 @@ namespace Client
             };
 
             var response = await client.ReadBlogAsync(readBlog);
+            Console.WriteLine(response.Blog.ToString());
+        }
+
+        private static async Task UpdateBlogAsync(BlogService.BlogServiceClient client)
+        {
+            var updateBlog = new UpdateBlogRequest
+            {
+                Blog = new Blog.Blog
+                {
+                    Id = "6438ed08f21c29c3e2336e5b",
+                    AuthorId = "Behdad-test",
+                    Content = "This content is updated",
+                    Title = "Updated"
+                }
+            };
+
+            var response = await client.UpdateBlogAsync(updateBlog);
             Console.WriteLine(response.Blog.ToString());
         }
     }
