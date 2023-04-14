@@ -2,13 +2,22 @@ syntax = "proto3";
 
 package blog;
 
-message blog {
+message Blog {
 	string id = 1;
 	string author_id = 2;
 	string title = 3;
 	string content = 4;
 }
 
-service BlogService {
+message CreateBlogRequest {
+	Blog blog = 1;
+}
 
+message CreaeteBlogResponse {
+	Blog blog = 1;
+}
+
+
+service BlogService {
+	rpc CreateBlog (CreateBlogRequest) returns (CreaeteBlogResponse) {}
 }
