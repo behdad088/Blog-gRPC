@@ -29,17 +29,17 @@ namespace server
             });
         }
 
-        public override Task<ReadBlogResponse> ReadBlog(ReadBlogRequest request, ServerCallContext context)
+        public override async Task<ReadBlogResponse> ReadBlog(ReadBlogRequest request, ServerCallContext context)
         {
             var blogId = request.BlogId;
             var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId));
-            var result = mongoCollection.Find(filter).FirstOrDefault();
+            var result = await mongoCollection.Find(filter).FirstOrDefaultAsync();
 
             if (result == null)
                 throw new RpcException(new Status(StatusCode.NotFound, $"The blog id {blogId} was not found."));
 
 
-            Blog.Blog blog = new Blog.Blog
+            var blog = new Blog.Blog
             {
                 AuthorId = result.GetValue("author_id").AsString,
                 Title = result.GetValue("title").AsString,
@@ -47,10 +47,37 @@ namespace server
                 Id = blogId
             };
 
-            return Task.FromResult(new ReadBlogResponse
+            return new ReadBlogResponse
             {
                 Blog = blog
-            });
+            };
+        }
+
+        public override async Task<UpdateBlogResponse> UpdateBlog(UpdateBlogRequest request, ServerCallContext context)
+        {
+            var blogId = request.Blog.Id;
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId));
+            var result = await mongoCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The blog id {blogId} was not found."));
+
+            var doc = new BsonDocument("author_id", request.Blog.AuthorId)
+                .Add("title", request.Blog.Title)
+                .Add("content", request.Blog.Content);
+
+            mongoCollection.ReplaceOne(filter, doc);
+
+            var blog = new Blog.Blog
+            {
+                AuthorId = doc.GetValue("author_id").AsString,
+                Title = doc.GetValue("title").AsString,
+                Content = doc.GetValue("content").AsString,
+            };
+
+            blog.Id = blogId;
+
+            return new UpdateBlogResponse { Blog = blog };
         }
     }
 }
