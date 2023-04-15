@@ -25,7 +25,8 @@ namespace Client
                 //await CreateBlogAsync(client);
                 //await ReadBlogAsync(client);
                 //await UpdateBlogAsync(client);
-                await DeleteBlogAsync(client);
+                //await DeleteBlogAsync(client);
+                await ListBlogAsync(client);
             }
             catch (RpcException e)
             {
@@ -91,6 +92,16 @@ namespace Client
 
             var response = await client.DeleteBlogAsync(deleteRequest);
             Console.WriteLine($"Blog with id {response.BlogId} was deleted.");
+        }
+
+        private static async Task ListBlogAsync(BlogService.BlogServiceClient client)
+        {
+            var response = client.ListBlog(new ListBlogRequest());
+
+            while (await response.ResponseStream.MoveNext())
+            {
+                Console.WriteLine(response.ResponseStream.Current.Blog.ToString());
+            }
         }
     }
 }
